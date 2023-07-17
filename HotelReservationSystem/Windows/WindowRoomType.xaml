@@ -1,0 +1,56 @@
+﻿<Window x:Class="HotelReservationSystem.Windows.WindowRoomType"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HotelReservationSystem.Windows"
+        xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation" 
+        Loaded="Window_Loaded"
+        SizeToContent="Height"  WindowStartupLocation="CenterScreen">
+    <Grid Margin="5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0 5 0 0" >
+            <telerik:RadButton Name="btnNew" Margin="0 0 5 0"  Width="60" Click="btnNew_Click">
+                <telerik:RadButton.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/HotelReservationSystem;component/Icons/cancel.png" Margin="0 0 3 0"/>
+                        <TextBlock Text="New" Margin="0 0 3 0"/>
+                    </StackPanel>
+                </telerik:RadButton.Content>
+            </telerik:RadButton>
+            <telerik:RadButton Name="btnSave"  Width="60" Click="btnSave_Click">
+                <telerik:RadButton.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/HotelReservationSystem;component/Icons/Save.png" Margin="0 0 3 0"/>
+                        <TextBlock Text="Save" Margin="0 0 3 0"/>
+                    </StackPanel>
+                </telerik:RadButton.Content>
+            </telerik:RadButton>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0 5 0 0">
+            <Label Content="Room Type Name :" Width="120"/>
+            <telerik:RadMaskedTextInput x:Name="txtRoomTypeName" Value="{Binding RoomTypeName,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="400" Mask=""/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0 5 0 0">
+            <Label Content="Room Price :" Width="120"/>
+            <telerik:RadMaskedNumericInput x:Name="txtRoomPrice" Value="{Binding RoomPrice,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="100" Mask=""/>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Orientation="Horizontal" Margin="0 5 0 0">
+            <Label Content="GST (%) :" Width="120"/>
+            <telerik:RadMaskedNumericInput x:Name="txtGSTPer" Value="{Binding GSTPercentage,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="100" Mask=""/>
+        </StackPanel>
+        <StackPanel Grid.Row="4" Grid.ColumnSpan="2" Orientation="Horizontal" Margin="0 5 0 0">
+            <Label Content="Description :" Width="120"/>
+            <TextBox Width="600" x:Name="txtDescription"  Text="{Binding Description,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+        </StackPanel>
+    </Grid>
+</Window>

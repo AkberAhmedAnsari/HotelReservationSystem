@@ -1,0 +1,88 @@
+﻿<Window x:Class="HotelReservationSystem.Windows.winCustomerInformation"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+        xmlns:local="clr-namespace:HotelReservationSystem.Windows" Loaded="Window_Loaded"
+        mc:Ignorable="d"
+        Title="Client Information" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen">
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0 5 0 0" >
+            <telerik:RadButton Name="btnNew" Margin="0 0 5 0"  Width="60" Click="btnNew_Click">
+                <telerik:RadButton.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/HotelReservationSystem;component/Icons/cancel.png" Margin="0 0 3 0"/>
+                        <TextBlock Text="New" Margin="0 0 3 0"/>
+                    </StackPanel>
+                </telerik:RadButton.Content>
+            </telerik:RadButton>
+            <telerik:RadButton Name="btnSave"  Width="60" Click="btnSave_Click">
+                <telerik:RadButton.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/HotelReservationSystem;component/Icons/Save.png" Margin="0 0 3 0"/>
+                        <TextBlock Text="Save" Margin="0 0 3 0"/>
+                    </StackPanel>
+                </telerik:RadButton.Content>
+            </telerik:RadButton>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0 5 0 0">
+            <Label Content="Title :" Width="105"/>
+            <telerik:RadComboBox Width="50" x:Name="Cbtitle" DisplayMemberPath="Name" SelectedValuePath="TitleId" SelectedValue="{Binding TitleTypeId,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged }"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0 5 0 0">
+            <Label Content="Client Name :" Width="105"/>
+            <telerik:RadMaskedTextInput x:Name="FirstName" Value="{Binding FirstName,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="200" Mask=""/>
+
+            <!--<Label Content="First Name :" Width="80"/>
+            <telerik:RadMaskedTextInput x:Name="LastName" Value="{Binding LastName,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  Width="200" Mask="" />-->
+        </StackPanel>
+        <StackPanel Grid.Row="3" Orientation="Horizontal" Margin="0 5 0 0">
+            <Label Content="NIC :" Width="105"/>
+            <telerik:RadMaskedTextInput Width="200" Name="txtNIC" Value="{Binding NIC,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Mask="a40" />
+
+            <Label Content="Client Type :" Width="105"/>
+            <telerik:RadComboBox Width="200" x:Name="CbClientType"  DisplayMemberPath="Name" SelectedValuePath="CustomerTypeId" SelectedValue="{Binding CustomerTypeId,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged }"/>
+        </StackPanel>
+        <StackPanel Grid.Row="4" Orientation="Horizontal" Margin="0 5 0 0">
+            <Label Content="Mobile :" Width="105"/>
+            <telerik:RadMaskedTextInput Width="200" Name="txtMobile" Value="{Binding MobileNumber,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Mask="a20" />
+
+            <Label Content="Home Phone :" Width="105"/>
+            <telerik:RadMaskedTextInput Width="200" Name="txtHomePhone" Value="{Binding HomeNumber,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Mask="(###)###-####" />
+        </StackPanel>
+        <StackPanel Grid.Row="5" Orientation="Horizontal" Margin="0 5 0 0">
+            <Label Content="Address :" Width="105"/>
+            <telerik:RadMaskedTextInput Width="600" x:Name="txtAddress" Mask="" Value="{Binding Address,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+        </StackPanel>
+        <StackPanel Grid.Row="6" Orientation="Horizontal" Margin="0 5 0 0">
+            <Label Content="Country :" Width="105"/>
+            <telerik:RadComboBox Width="200" x:Name="CbCountry" DisplayMemberPath="CountryName" SelectedValuePath="CountryId" SelectionChanged="CbCountry_SelectionChanged" SelectedValue="{Binding CountryId,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+            <telerik:RadButton  Name="btnAddCountry" Margin="0 0 4 0" Click="btnAddCountry_Click" Width="30">
+                <telerik:RadButton.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/HotelReservationSystem;component/Icons/add.png" Margin="0 0 3 0"/>
+                    </StackPanel>
+                </telerik:RadButton.Content>
+            </telerik:RadButton>
+            <Label Content="City :" Width="105" Margin="10 0 0 0"/>
+            <telerik:RadComboBox Width="200" x:Name="CbCity" DisplayMemberPath="CityName" SelectedValuePath="CityId" SelectedValue="{Binding CityId,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+            <telerik:RadButton  Name="btnAddCity" Margin="0 0 4 0" Click="btnAddCity_Click" Width="30">
+                <telerik:RadButton.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/HotelReservationSystem;component/Icons/add.png" Margin="0 0 3 0"/>
+                    </StackPanel>
+                </telerik:RadButton.Content>
+            </telerik:RadButton>
+        </StackPanel>
+    </Grid>
+</Window>

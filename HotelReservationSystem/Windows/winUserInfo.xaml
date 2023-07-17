@@ -1,0 +1,64 @@
+﻿<Window x:Class="HotelReservationSystem.Windows.winUserInfo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HotelReservationSystem.Windows"
+        xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+        xmlns:tools="clr-namespace:Telerik.Windows.Media.Imaging.Tools;assembly=Telerik.Windows.Controls.ImageEditor"   
+        mc:Ignorable="d" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded"
+        Title="User">
+    <Grid Margin="5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="160"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0 5 0 0" >
+            <telerik:RadButton Name="btnNew" Margin="0 0 5 0"  Width="60" Click="btnNew_Click">
+                <telerik:RadButton.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/HotelReservationSystem;component/Icons/cancel.png" Margin="0 0 3 0"/>
+                        <TextBlock Text="New" Margin="0 0 3 0"/>
+                    </StackPanel>
+                </telerik:RadButton.Content>
+            </telerik:RadButton>
+            <telerik:RadButton Name="btnSave"  Width="60" Click="btnSave_Click">
+                <telerik:RadButton.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/HotelReservationSystem;component/Icons/Save.png" Margin="0 0 3 0"/>
+                        <TextBlock Text="Save" Margin="0 0 3 0"/>
+                    </StackPanel>
+                </telerik:RadButton.Content>
+            </telerik:RadButton>
+        </StackPanel>
+       
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0 5 0 0">
+            <Label Content="User Name :" Width="110"/>
+            <telerik:RadMaskedTextInput x:Name="txtusername" Value="{Binding username,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="200" Mask=""/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0 5 0 0">
+            <Label Content="Login Id :" Width="110"/>
+            <telerik:RadMaskedTextInput x:Name="txtLoginId" Value="{Binding loginId,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="120" Mask=""/>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Orientation="Horizontal" Margin="0 5 0 0">
+            <Label Content="Password :" Width="110"/>
+            <PasswordBox x:Name="txtPassword" Width="120"/>
+        </StackPanel>
+        <StackPanel Grid.Row="4" Orientation="Horizontal" Margin="0 5 0 0">
+            <Label Content="Confirm Password :" Width="110"/>
+            <PasswordBox x:Name="txtconfirmPassword" Width="120"/>
+        </StackPanel>
+        <StackPanel Grid.Row="5" Orientation="Horizontal" Margin="0 5 0 0">
+            <Label Content="User Type :" Width="105"/>
+            <telerik:RadComboBox Width="200" x:Name="CbUserType"  DisplayMemberPath="UserTypeName" SelectedValuePath="UserTypeId" SelectedValue="{Binding UserTypeId,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged }"/>
+        </StackPanel>
+    </Grid>
+</Window>

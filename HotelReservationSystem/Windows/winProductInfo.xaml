@@ -1,0 +1,106 @@
+﻿<Window x:Class="HotelReservationSystem.Windows.winProductInfo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HotelReservationSystem.Windows"
+        xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+        xmlns:tools="clr-namespace:Telerik.Windows.Media.Imaging.Tools;assembly=Telerik.Windows.Controls.ImageEditor"   
+        mc:Ignorable="d" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded"
+        Title="Product">
+    <Grid Margin="5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="160"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0 5 0 0" >
+            <telerik:RadButton Name="btnNew" Margin="0 0 5 0"  Width="60" Click="btnNew_Click">
+                <telerik:RadButton.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/HotelReservationSystem;component/Icons/cancel.png" Margin="0 0 3 0"/>
+                        <TextBlock Text="New" Margin="0 0 3 0"/>
+                    </StackPanel>
+                </telerik:RadButton.Content>
+            </telerik:RadButton>
+            <telerik:RadButton Name="btnSave"  Width="60" Click="btnSave_Click">
+                <telerik:RadButton.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/HotelReservationSystem;component/Icons/Save.png" Margin="0 0 3 0"/>
+                        <TextBlock Text="Save" Margin="0 0 3 0"/>
+                    </StackPanel>
+                </telerik:RadButton.Content>
+            </telerik:RadButton>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0 5 0 0">
+            <Label Content="Product Catagre:" Width="100"/>
+            <telerik:RadComboBox Width="200" x:Name="CbProductCatagre"  DisplayMemberPath="CategoryName" SelectedValuePath="CategoryId" SelectedValue="{Binding CategoryId,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged }"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0 5 0 0">
+            <Label Content="Product Name :" Width="100"/>
+            <telerik:RadMaskedTextInput x:Name="txtProductName" Value="{Binding productItemname,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="400" Mask=""/>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Orientation="Horizontal" Margin="0 5 0 0">
+            <Label Content="Barcode :" Width="100"/>
+            <telerik:RadMaskedTextInput x:Name="txtBarcode" Value="{Binding barcode,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="120" Mask=""/>
+        </StackPanel>
+        <StackPanel Grid.Row="4" Orientation="Horizontal" Margin="0 5 0 0">
+            <Label Content="Product Type :" Width="100"/>
+            <telerik:RadComboBox Width="200" x:Name="CbProductType"  DisplayMemberPath="Name" SelectedValuePath="ProductTypeId" SelectedValue="{Binding ProductTypeId,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged }"/>
+        </StackPanel>
+        <StackPanel Grid.Row="5" Grid.ColumnSpan="2" Orientation="Horizontal" Margin="0 5 0 0">
+            <Label Content="Cost Price :" Width="100"/>
+            <telerik:RadMaskedNumericInput Width="200" Name="txtCostPrice" Value="{Binding costprice,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  />
+
+            <Label Content="Sale Price :" Width="100"/>
+            <telerik:RadMaskedNumericInput Width="200" Name="txtSalePrice" Value="{Binding saleprice,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  />
+        </StackPanel>
+        <StackPanel Grid.Row="6" Grid.ColumnSpan="2" Orientation="Horizontal" Margin="0 5 0 0">
+            <Label Content="Description :" Width="100"/>
+            <telerik:RadMaskedTextInput Width="600" x:Name="txtDescription" Mask="" Value="{Binding prodescription,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+        </StackPanel>
+        <Border  Grid.Row="0" Grid.Column="1" Grid.RowSpan="5" BorderBrush="Gray" BorderThickness="1">
+            <Grid x:Name="LayoutRoot" Grid.Row="0" Grid.Column="1" Grid.RowSpan="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+                <Grid.Resources>
+                    <Storyboard x:Key="FadeIn">
+                        <DoubleAnimation Duration="00:00:00.200" To="1.00" From="0.3" Storyboard.TargetName="fadeoutPanel" Storyboard.TargetProperty="Opacity"/>
+                    </Storyboard>
+                    <Storyboard x:Key="FadeOut">
+                        <DoubleAnimation Duration="00:00:00.200" To="0.3" From="1.00" Storyboard.TargetName="fadeoutPanel" Storyboard.TargetProperty="Opacity"/>
+                    </Storyboard>
+                </Grid.Resources>
+                <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  >
+                    <telerik:RadImageEditor x:Name="imageEditor"  ScaleFactor="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"   />
+
+                    <Grid x:Name="fadeoutPanel" Opacity="0.3">
+                        <!--<example:CustomSettingsContainer x:Name="settingsContainer" />-->
+                        <Border HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0 0 0 14" Background="#CCF0F4FA" CornerRadius="10" Padding="4">
+                            <Grid x:Name="tools" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+
+                                <telerik:RadImageEditorButton Grid.Column="0"  
+                                                Command="{Binding Path=Commands.Open, ElementName=imageEditor}" Image="/HotelReservationSystem;component/Icons/folder.png"/>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Border>
+       
+        
+    </Grid>
+</Window>

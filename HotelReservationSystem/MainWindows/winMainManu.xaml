@@ -1,0 +1,46 @@
+﻿<Window x:Class="HotelReservationSystem.MainWindows.winMainManu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HotelReservationSystem.MainWindows"
+        xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+        Closed="Window_Closed" Loaded="Window_Loaded"
+        WindowState="Maximized"
+        mc:Ignorable="d"
+        Title="Hotel Reservation System" >
+    <Window.Resources>
+
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Name="lblCompany"  Background="#FF0CC579" Content="Company 1" Foreground="White" FontSize="20"/>
+        <telerik:RadMenu x:Name="MainMenu"  Grid.Row="1">
+            <telerik:RadMenuItem Header="Setup">
+                <telerik:RadMenuItem Header="Rooms Type" Name="RadMenuRoomType" Click="RadMenuRoomType_Click" />
+                <telerik:RadMenuItem Header="Rooms" Name="RadMenuRooms" Click="RadMenuRooms_Click" />
+                <telerik:RadMenuItem Header="Country" Name="RadMenuCountry" Click="RadMenuCountry_Click" />
+                <telerik:RadMenuItem Header="City" Name="RadMenuCity" Click="RadMenuCity_Click" />
+            </telerik:RadMenuItem>
+            <telerik:RadMenuItem Header="Transition" >
+                <telerik:RadMenuItem Header="Client Information" Click="RadMenuItem_Click"/>
+                <!--<telerik:RadMenuItem Header="Point Of Sale List" Name="RadMenuPointOfSAleList" Click="RadMenuPointOfSAleList_Click"/>-->
+                <telerik:RadMenuItem Header="Booking List" Name="RadMenuBookingList" Click="RadMenuBookingList_Click"/>
+                <telerik:RadMenuItem Header="Booking" Name="Booking" Click="RadMenuBooking_Click"/>
+            </telerik:RadMenuItem>
+            <telerik:RadMenuItem Header="Reports" Name="RadMenuReports" Click="RadMenuReports_Click" Visibility="Collapsed">
+                
+            </telerik:RadMenuItem>
+            <telerik:RadMenuItem Header="Administration" Name="MenuAdministration">
+                <telerik:RadMenuItem Header="User List" Name="RadMenuUser" Click="RadMenuUser_Click" />
+            </telerik:RadMenuItem>
+
+        </telerik:RadMenu>
+        <TabControl Grid.Row="2" Name="RadTabControlMain" Background="#FFF0EEEE" >
+        </TabControl>
+    </Grid>
+</Window>

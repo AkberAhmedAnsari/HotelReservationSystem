@@ -1,0 +1,70 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BAL", "BAL\BAL.csproj", "{69A06CA6-979E-4A51-B8D6-083174D58895}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{4096D0FE-AF21-40F9-9A91-4E140E1AC6DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utility", "Utility\Utility.csproj", "{2A7ADA90-92BE-490D-AC7D-1159930CFAC9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DLL", "DLL", "{A54F5A5D-E94C-4519-8C71-0AB14C233E35}"
+	ProjectSection(SolutionItems) = preProject
+		DLL\Telerik.Windows.Controls.Data.dll = DLL\Telerik.Windows.Controls.Data.dll
+		DLL\Telerik.Windows.Controls.dll = DLL\Telerik.Windows.Controls.dll
+		DLL\Telerik.Windows.Controls.GridView.dll = DLL\Telerik.Windows.Controls.GridView.dll
+		DLL\Telerik.Windows.Controls.ImageEditor.dll = DLL\Telerik.Windows.Controls.ImageEditor.dll
+		DLL\Telerik.Windows.Controls.Input.dll = DLL\Telerik.Windows.Controls.Input.dll
+		DLL\Telerik.Windows.Controls.Navigation.dll = DLL\Telerik.Windows.Controls.Navigation.dll
+		DLL\Telerik.Windows.Data.dll = DLL\Telerik.Windows.Data.dll
+		DLL\Telerik.Windows.Themes.Windows8.dll = DLL\Telerik.Windows.Themes.Windows8.dll
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelReservationSystem", "HotelReservationSystem\HotelReservationSystem.csproj", "{867A82C8-8C37-45A8-9C5E-E48A45D6627C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{69A06CA6-979E-4A51-B8D6-083174D58895}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69A06CA6-979E-4A51-B8D6-083174D58895}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69A06CA6-979E-4A51-B8D6-083174D58895}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69A06CA6-979E-4A51-B8D6-083174D58895}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4096D0FE-AF21-40F9-9A91-4E140E1AC6DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4096D0FE-AF21-40F9-9A91-4E140E1AC6DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4096D0FE-AF21-40F9-9A91-4E140E1AC6DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4096D0FE-AF21-40F9-9A91-4E140E1AC6DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A7ADA90-92BE-490D-AC7D-1159930CFAC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A7ADA90-92BE-490D-AC7D-1159930CFAC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A7ADA90-92BE-490D-AC7D-1159930CFAC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A7ADA90-92BE-490D-AC7D-1159930CFAC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{867A82C8-8C37-45A8-9C5E-E48A45D6627C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{867A82C8-8C37-45A8-9C5E-E48A45D6627C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{867A82C8-8C37-45A8-9C5E-E48A45D6627C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{867A82C8-8C37-45A8-9C5E-E48A45D6627C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://smartakber.visualstudio.com/
+		SccProjectUniqueName0 = BAL\\BAL.csproj
+		SccProjectName0 = ../../HotelReservation/BAL
+		SccLocalPath0 = BAL
+		SccProjectUniqueName1 = DAL\\DAL.csproj
+		SccProjectName1 = ../../HotelReservation/DAL
+		SccLocalPath1 = DAL
+		SccProjectUniqueName2 = Utility\\Utility.csproj
+		SccProjectName2 = ../../HotelReservation/Utility
+		SccLocalPath2 = Utility
+		SccProjectUniqueName3 = HotelReservationSystem\\HotelReservationSystem.csproj
+		SccProjectName3 = ../../HotelReservation/HotelReservationSystem
+		SccLocalPath3 = HotelReservationSystem
+		SccLocalPath4 = .
+	EndGlobalSection
+EndGlobal

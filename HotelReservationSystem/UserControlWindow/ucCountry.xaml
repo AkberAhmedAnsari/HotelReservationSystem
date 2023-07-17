@@ -1,0 +1,70 @@
+﻿<UserControl x:Class="HotelReservationSystem.UserControlWindow.ucCountry"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HotelReservationSystem.UserControlWindow"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:custom="clr-namespace:HotelReservationSystem"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="0 5">
+            <telerik:RadButton  Name="btnNew" Margin="0 0 4 0" Click="btnNew_Click" Width="60">
+                <telerik:RadButton.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/HotelReservationSystem;component/Icons/add.png" Margin="0 0 3 0"/>
+                        <TextBlock Text="New" Margin="0 0 3 0"/>
+                    </StackPanel>
+                </telerik:RadButton.Content>
+            </telerik:RadButton>
+            <telerik:RadButton  Name="btnEdit" Margin="0 0 4 0"  Width="60" Click="btnEdit_Click">
+                <telerik:RadButton.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/HotelReservationSystem;component/Icons/edit.png" Margin="0 0 3 0"/>
+                        <TextBlock Text="Edit" Margin="0 0 3 0"/>
+                    </StackPanel>
+                </telerik:RadButton.Content>
+            </telerik:RadButton>
+            <telerik:RadButton  Name="btnDelete" Margin="0 0 4 0"  Width="60" Click="btnDelete_Click">
+                <telerik:RadButton.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/HotelReservationSystem;component/Icons/garbage.png" Margin="0 0 3 0"/>
+                        <TextBlock Text="Delete" Margin="0 0 3 0"/>
+                    </StackPanel>
+                </telerik:RadButton.Content>
+            </telerik:RadButton>
+            <telerik:RadButton  Name="btnPrint" Margin="0 0 4 0"  Width="60" Visibility="Collapsed">
+                <telerik:RadButton.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/HotelReservationSystem;component/Icons/printer.png" Margin="0 0 3 0"/>
+                        <TextBlock Text="Print" Margin="0 0 3 0"/>
+                    </StackPanel>
+                </telerik:RadButton.Content>
+            </telerik:RadButton>
+            <telerik:RadButton  Name="btngetRecord" Margin="0 0 4 0"  Width="100" Click="btngetRecord_Click">
+                <telerik:RadButton.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/HotelReservationSystem;component/Icons/getrecord.png" Margin="0 0 3 0"/>
+                        <TextBlock Text="Get Records" Margin="0 0 3 0"/>
+                    </StackPanel>
+                </telerik:RadButton.Content>
+            </telerik:RadButton>
+        </StackPanel>
+        <telerik:RadGridView Grid.Row="1" Name="gridviewCountry" CanUserDeleteRows="False" CanUserInsertRows="False" 
+                             AutoGenerateColumns="False" IsReadOnly="True">
+            <telerik:RadGridView.Columns>
+                <custom:MyColumn Header="SNo."
+								 Width="40"/>
+                <telerik:GridViewDataColumn Header="Country Code" DataMemberBinding="{Binding CountryCode}" Width="130"/>
+                <telerik:GridViewDataColumn Header="Country Name" DataMemberBinding="{Binding CountryName}" Width="100"/>
+                <telerik:GridViewDataColumn Header="Data Entry Date" DataMemberBinding="{Binding DataEntryDate}" Width="120"/>
+                <telerik:GridViewDataColumn Header="User Name" DataMemberBinding="{Binding UserName}" Width="100"/>
+            </telerik:RadGridView.Columns>
+        </telerik:RadGridView>
+    </Grid>
+</UserControl>
